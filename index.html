@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Countdown to 1 Dec 2025 (Adelaide)</title>
-  <meta name="description" content="Live per‑second countdown to 01 Dec 2025 00:00 (Australia/Adelaide)">
+  <title>Countdown</title>
+  <meta name="description" content="Live countdown timer">
   <style>
     :root{
       --bg:#f7f8fa; --card:#ffffff; --text:#111; --muted:#666; --accent:#0b62ff; --accent-bg:#eef4ff; --accent-br:#d7e4ff;
@@ -12,8 +12,6 @@
     html,body{height:100%;margin:0;font-family:Segoe UI, Roboto, Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text)}
     .wrap{max-width:720px;margin:0 auto;padding:32px}
     .card{background:var(--card);border:1px solid #e6e6e6;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);padding:24px}
-    h1{font-size:22px;margin:0 0 12px}
-    .sub{color:var(--muted);margin:0 0 18px;font-size:14px}
     .row{display:flex;gap:12px;flex-wrap:wrap}
     .tile{flex:1 1 120px;min-width:120px;background:var(--accent-bg);border:1px solid var(--accent-br);border-radius:10px;padding:16px;text-align:center}
     .num{font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px;color:var(--accent);font-size:44px;line-height:1}
@@ -28,8 +26,6 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Countdown to 1 Dec 2025 (Adelaide)</h1>
-      <p class="sub">Live timer updates every second to <strong>01 December 2025, 00:00</strong> (Australia/Adelaide).</p>
       <div class="row" role="timer" aria-live="polite">
         <div class="tile"><div id="d" class="num" aria-label="Days">0</div><div class="lab">DAYS</div></div>
         <div class="tile"><div id="h" class="num" aria-label="Hours">00</div><div class="lab">HRS</div></div>
@@ -41,9 +37,7 @@
   </div>
 <script>
 (function(){
-  // Target: 2025-12-01 00:00:00 Australia/Adelaide (ACDT = UTC+10:30)
-  // Equivalent UTC timestamp: 2025-11-30T13:30:00Z
-  const TARGET_UTC_MS = Date.UTC(2025, 10, 30, 13, 30, 0); // months are 0-based
+  const TARGET_UTC_MS = Date.UTC(2025, 10, 30, 13, 30, 0); // 2025-11-30T13:30:00Z
 
   const dEl = document.getElementById('d');
   const hEl = document.getElementById('h');
